@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Slide Down a Navigation Bar on Scroll
+		using HTML CSS and JavaScript
+	</title>
+	
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1">
+	
+	<style>
+	
+        body{
+            background-color: rgb(213, 185, 190);
+        }
+		article {
+			position: fixed;
+			margin-left: 10px;
+		}
+		
+		#navlist {
+			background-color: #b1d900;
+			position: fixed;
+			left: 45%;
+			top: -60px;
+			width: auto;
+			display: block;
+			transition: top 0.3s;
+		}
+		
+		#navlist a {
+			float: left;
+			display: block;
+			color: #1d1b1b;
+			text-align: center;
+			padding: 12px;
+			text-decoration: none;
+			font-size: 15px;
+		}
+		
+		#navlist a:hover {
+			background-color: #f2f9f9;
+			color: black;
+		}
+	</style>
+</head>
+
+<body>
+	
+	<!-- logo with tag -->
+	<article>
+		<h1 style="color:rgb(71, 143, 232);">
+			About Myself
+		</h1>
+<p>
+    Hello! I am Sai Chithra 
+    A first-year B.Tech student at Indian Institute of Information Technology, Allahabad. Originally from Godavarikhani,Telangana. I have done my intermediate education, bringing a foundation of knowledge from Sri chaitanya junior college, Hyderabad, Telangana. Prior to that, I excelled in my 10th-grade education at Sri chaitanya e-techno High School, Godavarikhani,Telangana. Currently specializing in Business-Informatics at IIITA. Apart from excelling in technical subjects, I am fluent in Telugu,English and Hindi. Beyond academia, my interests span across programming, Badminton and exploring various fields providing a well-rounded approach to personal and intellectual development.
+</p>
+
+	</article>
+	
+	<div id="navlist">
+		<a href="#">Home</a>
+		<a href="#">Education</a>
+		<a href="#">Skills</a>
+		<a href="#">Projects</a>
+		<a href="#">Contact</a>
+	</div>
+
+	<div class="scrollable"
+		style="padding:15px 15px 4500px;">
+	</div>
+
+	<script>
+	
+		window.onscroll = function() {
+			scroll()
+		};
+
+		function scroll() {
+			if (document.body.scrollTop > 20 || 
+					document.documentElement.scrollTop > 20)
+			{
+				document.getElementById("navlist").style.top
+							= "0";
+			}
+			else {
+				document.getElementById("navlist").style.top
+							= "-60px";
+			}
+		}
+	</script>
+</body>
+
+</html>
